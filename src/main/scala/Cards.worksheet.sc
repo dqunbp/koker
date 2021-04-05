@@ -1,38 +1,30 @@
-// Создаем класс и объект для масти, создаем обьекты масти наследуя от класса масти
+// Создаем класс, создаем обьекты масти наследуя от класса масти
 // Далее можно будет обращаться к ним Suit.Diamonds
 abstract class Suit
-object Suit {
-  case object Clubs extends Suit
-  case object Diamonds extends Suit
-  case object Hearts extends Suit
-  case object Spades extends Suit
-}
 
-// Чтобы обращаться не Suit.Diamonds а напрямую Diamonds надо импортировать содержимое Suit,
-// _ означает импортирвоать все
-import Suit._
+case object Clubs extends Suit
+case object Diamonds extends Suit
+case object Hearts extends Suit
+case object Spades extends Suit
 
 // Создаем класс и объект для ранга, создаем и наследуем от него объекты рангов
 // Так же объявляем свойство класса value для хранения числового значения ранга в объектах ранга
 // Передаем это числовое значение при наследовании от базового класса
 abstract class Rank(val value: Int)
-object Rank {
-  case object Two extends Rank(2)
-  case object Three extends Rank(3)
-  case object Four extends Rank(4)
-  case object Five extends Rank(5)
-  case object Six extends Rank(6)
-  case object Seven extends Rank(7)
-  case object Eight extends Rank(8)
-  case object Nine extends Rank(9)
-  case object Ten extends Rank(10)
-  case object Jack extends Rank(11)
-  case object Queen extends Rank(12)
-  case object King extends Rank(13)
-  case object Ace extends Rank(14)
-}
 
-import Rank._
+case object Two extends Rank(2)
+case object Three extends Rank(3)
+case object Four extends Rank(4)
+case object Five extends Rank(5)
+case object Six extends Rank(6)
+case object Seven extends Rank(7)
+case object Eight extends Rank(8)
+case object Nine extends Rank(9)
+case object Ten extends Rank(10)
+case object Jack extends Rank(11)
+case object Queen extends Rank(12)
+case object King extends Rank(13)
+case object Ace extends Rank(14)
 
 // Объявляем класс карты сочетающий 2 свойства - ранг и масть
 case class Card(rank: Rank, suit: Suit)
